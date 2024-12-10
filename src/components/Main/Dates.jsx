@@ -1,42 +1,70 @@
+import { getWeatherCity } from '../../services/weather';
+import { getCities } from '../../services/cities';
+import { capitaliceFirstName } from '../../utils/capitaliceFirstLetter';
+import { useState } from 'react';
+import { Form } from './Form';
+
 export const Dates = () => {
+	const [weatherData, setWeatherData] = useState({});
+	const [cityData, setCityData] = useState('');
+
+	const handleWeatherSearch = async (search) => {
+		const cities = await getCities(search);
+		if (cities && cities.length > 0) {
+			const { lat, lon } = cities[0];
+			const weather = await getWeatherCity(lat, lon);
+			setWeatherData(weather);
+		}
+	};
+
+	const handleCitySearch = async (search) => {
+		const nameCity = await getCities(search);
+		if (nameCity && nameCity.length > 0) {
+			const name = nameCity[0].name;
+			setCityData(name);
+			console.log(setCityData(search));
+		}
+	};
+
 	return (
-		<section className='w-full h-auto p-4 shadow-xl bg-white/20 rounded-md flex flex-col gap-3'>
-			<article className='mb-4 flex gap-4 place-items-end'>
-				<h2 className='text-2xl pl-1'>Santa Rosa</h2>
-				<p className='pr-1 text-md font-medium'>20:24</p>
+		<section className='w-full h-auto p-4 pt-2 shadow-xl bg-white/20 rounded-md flex flex-col gap-3'>
+			<Form onSearch={handleWeatherSearch} onCitySearch={handleCitySearch} />
+			<article className='mb-4 h-8 flex gap-4 place-items-end'>
+				<h2 className='text-xl font-medium pl-1'>{cityData}</h2>
 			</article>
 			<div>
 				<article className='w-auto flex gap-10 place-items-center'>
 					<div className='mb-4 flex place-items-center gap-2'>
-						<img src='src/assets/imgs/sun.svg' alt='Sun' />
-						<p className='text-3xl font-bold'>27º</p>
+						<img src='' alt='Sun' />
+						<p className='text-3xl font-bold'>{weatherData?.weather}º</p>
 					</div>
 					<div className='font-medium'>
 						<p>Soleado</p>
-						<p>Sensacion térmica 25º</p>
+						<p>Sensacion térmica de {weatherData?.feelslike}º</p>
 					</div>
 				</article>
 				<span className='text-slate-200'>
-					Día soleado con temperatura máxima de 28º
+					{capitaliceFirstName(weatherData?.description)} con temperatura mínima
+					de {weatherData?.min} y máxima de {weatherData?.max}º
 				</span>
 			</div>
 			<div>
 				<article className='p-4 text-sm flex flex-row justify-between'>
 					<div>
 						<p>Viento</p>
-						<p className='text-lg font-medium'>10 km</p>
+						<p className='text-lg font-medium'>{weatherData?.wind} km</p>
 					</div>
 					<div>
 						<p>Humedad</p>
-						<p className='text-lg font-medium'>20%</p>
+						<p className='text-lg font-medium'>{weatherData?.humidity} %</p>
 					</div>
 					<div>
 						<p>Visibilidad</p>
-						<p className='text-lg font-medium'>30 km</p>
+						<p className='text-lg font-medium'>{weatherData?.visibility} km</p>
 					</div>
 					<div>
 						<p>Presión</p>
-						<p className='text-lg font-medium'>1017 mbar</p>
+						<p className='text-lg font-medium'>{weatherData?.pressure} mbar</p>
 					</div>
 				</article>
 			</div>
