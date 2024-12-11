@@ -9,6 +9,7 @@ export const getWeatherCity = async (lat, lon) => {
 			return {
 				weather: weatherCity.main.temp,
 				description: weatherCity.weather[0].description,
+				icon: weatherCity.weather[0].icon,
 				min: weatherCity.main.temp_min,
 				max: weatherCity.main.temp_max,
 				feelslike: weatherCity.main.feels_like,

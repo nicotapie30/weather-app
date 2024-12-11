@@ -1,4 +1,4 @@
-export const capitaliceFirstName = (search) => {
+export const capitalizeFirstName = (search) => {
 	if (!search) return search;
 
 	return search
