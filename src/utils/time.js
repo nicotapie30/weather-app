@@ -3,7 +3,8 @@ export const getTime = () => {
 
 	const hoursMinutes = {
 		hour: date.getHours(),
-		minutes: date.getMinutes(),
+		minutes:
+			date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes(),
 	};
 
 	return { hoursMinutes };

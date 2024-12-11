@@ -36,42 +36,50 @@ export const Dates = () => {
 			<article className='mb-3 h-8 flex gap-4 place-items-end'>
 				<h2 className='text-3xl font-medium pl-1'>{cityData}</h2>
 			</article>
-			<div>
-				<article className='w-auto flex gap-10 place-items-center'>
-					<div className='mb-4 flex place-items-center gap-2'>
-						<img src={iconUrl} alt='Icono del clima' />
-						<p className='text-3xl font-bold'>{weatherData?.weather}º</p>
-					</div>
-					<div className='font-medium'>
-						<p>{capitalizeFirstLetter(weatherData.description)}</p>
-						<p>Sensacion térmica de {weatherData?.feelslike}º</p>
-					</div>
-				</article>
-				<span className='text-slate-200'>
-					{capitalizeFirstLetter(weatherData?.description)} con temperatura
-					mínima de {weatherData?.min} y máxima de {weatherData?.max}º
-				</span>
-			</div>
-			<div>
-				<article className='p-4 text-sm flex flex-row justify-between'>
-					<div>
-						<p>Viento</p>
-						<p className='text-lg font-medium'>{weatherData?.wind} km</p>
-					</div>
-					<div>
-						<p>Humedad</p>
-						<p className='text-lg font-medium'>{weatherData?.humidity} %</p>
-					</div>
-					<div>
-						<p>Visibilidad</p>
-						<p className='text-lg font-medium'>{weatherData?.visibility} km</p>
-					</div>
-					<div>
-						<p>Presión</p>
-						<p className='text-lg font-medium'>{weatherData?.pressure} mbar</p>
-					</div>
-				</article>
-			</div>
+			{cityData && (
+				<div>
+					<article className='w-auto flex gap-10 place-items-center'>
+						<div className='mb-4 flex place-items-center gap-2'>
+							<img src={iconUrl} alt='Icono del clima' />
+							<p className='text-3xl font-bold'>{weatherData?.weather}º</p>
+						</div>
+						<div className='font-medium'>
+							<p>{capitalizeFirstLetter(weatherData.description)}</p>
+							<p>Sensacion térmica de {weatherData?.feelslike}º</p>
+						</div>
+					</article>
+					<span className='text-slate-200'>
+						{capitalizeFirstLetter(weatherData?.description)} con temperatura
+						mínima de {weatherData?.min} y máxima de {weatherData?.max}º
+					</span>
+				</div>
+			)}
+			{cityData && (
+				<div>
+					<article className='p-4 text-sm flex flex-row justify-between'>
+						<div>
+							<p>Viento</p>
+							<p className='text-lg font-medium'>{weatherData?.wind} km</p>
+						</div>
+						<div>
+							<p>Humedad</p>
+							<p className='text-lg font-medium'>{weatherData?.humidity} %</p>
+						</div>
+						<div>
+							<p>Visibilidad</p>
+							<p className='text-lg font-medium'>
+								{weatherData?.visibility} km
+							</p>
+						</div>
+						<div>
+							<p>Presión</p>
+							<p className='text-lg font-medium'>
+								{weatherData?.pressure} mbar
+							</p>
+						</div>
+					</article>
+				</div>
+			)}
 		</section>
 	);
 };
