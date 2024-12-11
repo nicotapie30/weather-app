@@ -1,7 +1,9 @@
+const API_KEY = import.meta.env.VITE_WEATHER_APP_API_KEY;
+
 export const getCities = async (search) => {
 	try {
 		const response = await fetch(
-			`http://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=1&appid=03805d208b5c66bf962734ff65caf628`
+			`http://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=1&appid=${API_KEY}`
 		);
 		if (response.ok) {
 			const cities = await response.json();

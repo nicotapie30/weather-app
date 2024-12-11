@@ -1,6 +1,6 @@
 import { getWeatherCity } from '../../services/weather';
 import { getCities } from '../../services/cities';
-import { capitalizeFirstName } from '../../utils/capitalizeFirstLetter';
+import { capitalizeFirstLetter } from '../../utils/capitalizeFirstLetter';
 import { useState } from 'react';
 import { Form } from './Form';
 
@@ -43,13 +43,13 @@ export const Dates = () => {
 						<p className='text-3xl font-bold'>{weatherData?.weather}º</p>
 					</div>
 					<div className='font-medium'>
-						<p>{capitalizeFirstName(weatherData.description)}</p>
+						<p>{capitalizeFirstLetter(weatherData.description)}</p>
 						<p>Sensacion térmica de {weatherData?.feelslike}º</p>
 					</div>
 				</article>
 				<span className='text-slate-200'>
-					{capitalizeFirstName(weatherData?.description)} con temperatura mínima
-					de {weatherData?.min} y máxima de {weatherData?.max}º
+					{capitalizeFirstLetter(weatherData?.description)} con temperatura
+					mínima de {weatherData?.min} y máxima de {weatherData?.max}º
 				</span>
 			</div>
 			<div>
