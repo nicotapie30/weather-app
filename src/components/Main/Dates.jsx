@@ -27,7 +27,7 @@ export const Dates = ({ setLocation }) => {
 	};
 
 	const iconUrl = weatherData.icon
-		? `http://openweathermap.org/img/wn/${weatherData.icon}.png`
+		? `https://openweathermap.org/img/wn/${weatherData.icon}.png`
 		: '';
 
 	return (
