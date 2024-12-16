@@ -1,6 +1,17 @@
+import React, { useState, useEffect } from 'react';
 import { getTime } from '../../utils/time';
 
 export const Header = () => {
+	const [time, setTime] = useState(getTime());
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setTime(getTime());
+		}, 1000);
+
+		return () => clearInterval(interval);
+	}, []);
+
 	return (
 		<header className='w-full lg:px-40 xl:px-96 p-4 flex place-items-center justify-between'>
 			<img
@@ -9,7 +20,7 @@ export const Header = () => {
 				alt='Wheater Now'
 			/>
 			<p className='text-3xl text-zinc-100 font-medium'>
-				{getTime().hoursMinutes.hour}:{getTime().hoursMinutes.minutes}
+				{time.hoursMinutes.hour}:{time.hoursMinutes.minutes}
 			</p>
 		</header>
 	);
