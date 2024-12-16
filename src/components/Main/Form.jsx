@@ -19,7 +19,7 @@ export const Form = ({ onSearch, onCitySearch }) => {
 				<input
 					type='search'
 					name='search'
-					className='w-60 p-2 text-gray-900 backdrop-blur-lg bg-white/70 placeholder-gray-700 rounded-s-md outline-none border-none font-medium'
+					className='w-60 p-2 max-[500px]:w-4/5 text-gray-900 backdrop-blur-lg bg-white/70 placeholder-gray-700 rounded-s-md outline-none border-none font-medium'
 					placeholder='New York, Estados Unidos...'
 					value={capitalizeFirstLetter(search)}
 					onChange={(ev) => setSearch(ev.target.value)}

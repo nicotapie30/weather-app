@@ -31,19 +31,23 @@ export const Dates = ({ setLocation }) => {
 		: '';
 
 	return (
-		<section className='w-full h-auto p-4 pt-2 shadow-xl min-[1024px]:text-xl bg-black/20 rounded-md flex flex-col gap-3'>
+		<section className='w-full h-auto p-4 pt-2 shadow-xl min-[1024px]:text-xl max-[500px]:p-2 bg-black/20 rounded-md flex flex-col gap-3'>
 			<Form onSearch={handleWeatherSearch} onCitySearch={handleCitySearch} />
 			<article className='mb-3 h-8 flex gap-4 place-items-end'>
-				<h2 className='text-3xl font-medium pl-1'>{cityData}</h2>
+				<h2 className='text-3xl font-medium pl-1 max-[500px]:text-2xl'>
+					{cityData}
+				</h2>
 			</article>
 			{cityData && (
 				<div>
 					<article className='w-auto flex gap-10 place-items-center'>
 						<div className='mb-4 flex place-items-center gap-2'>
 							<img src={iconUrl} alt='Icono del clima' />
-							<p className='text-3xl font-bold'>{weatherData?.weather}º</p>
+							<p className='text-3xl font-bold max-[500px]:text-2xl'>
+								{weatherData?.weather}º
+							</p>
 						</div>
-						<div className='font-medium max-[500px]:text-sm'>
+						<div className='font-medium max-[500px]:text-sm max-[400px]:text-xs'>
 							<p>{capitalizeFirstLetter(weatherData.description)}</p>
 							<p>Sensacion térmica de {weatherData?.feelslike}º</p>
 						</div>
@@ -56,28 +60,28 @@ export const Dates = ({ setLocation }) => {
 			)}
 			{cityData && (
 				<div>
-					<article className='p-4 text-sm flex flex-row justify-between min-[1024px]:text-xl'>
+					<article className='p-4 text-sm flex flex-row justify-between min-[1024px]:text-xl max-[500px]:p-1'>
 						<div>
 							<p>Viento</p>
-							<p className='text-lg font-medium max-[500px]:text-sm'>
+							<p className='text-lg font-medium max-[500px]:text-xs'>
 								{weatherData?.wind} km
 							</p>
 						</div>
 						<div>
 							<p>Humedad</p>
-							<p className='text-lg font-medium max-[500px]:text-sm'>
+							<p className='text-lg font-medium max-[500px]:text-xs'>
 								{weatherData?.humidity} %
 							</p>
 						</div>
 						<div>
 							<p>Visibilidad</p>
-							<p className='text-lg font-medium max-[500px]:text-sm'>
+							<p className='text-lg font-medium max-[500px]:text-xs'>
 								{weatherData?.visibility} km
 							</p>
 						</div>
 						<div>
 							<p>Presión</p>
-							<p className='text-lg font-medium max-[500px]:text-sm'>
+							<p className='text-lg font-medium max-[500px]:text-xs'>
 								{weatherData?.pressure} mbar
 							</p>
 						</div>
