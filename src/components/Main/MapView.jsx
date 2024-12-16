@@ -13,7 +13,7 @@ const MapView = ({ location }) => {
 	}, [location, map]);
 
 	const icon = L.icon({
-		iconUrl: 'https://openweathermap.org/img/wn/04d.png',
+		iconUrl: './Icon-Marker.webp',
 		iconSize: [50, 50],
 		iconAnchor: [25, 50],
 		popupAnchor: [0, -50],
