@@ -1,5 +1,5 @@
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
-import 'leaflet/dist/Leaflet.css';
+import 'leaflet/dist/leaflet.css';
 import { useEffect } from 'react';
 
 const MapView = ({ location }) => {
