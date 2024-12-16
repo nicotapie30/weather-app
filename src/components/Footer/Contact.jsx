@@ -9,7 +9,7 @@ export const Contact = () => {
 						href='https://github.com/nicotapie30'
 						target='blank'
 					>
-						<img src='src/assets/imgs/Github.svg' alt='Github' title='Github' />
+						<img src='./Github.svg' alt='Github' title='Github' />
 					</a>
 				</li>
 				<li>
@@ -18,11 +18,7 @@ export const Contact = () => {
 						href='https://www.linkedin.com/in/nicolasatapiedev30/'
 						target='blank'
 					>
-						<img
-							src='src/assets/imgs/Linkedin.svg'
-							alt='Linkedin'
-							title='Linkedin'
-						/>
+						<img src='./Linkedin.svg' alt='Linkedin' title='Linkedin' />
 					</a>
 				</li>
 				<li>
@@ -31,11 +27,7 @@ export const Contact = () => {
 						href='https://www.instagram.com/nicotapie1/'
 						target='blank'
 					>
-						<img
-							src='src/assets/imgs/Instagram.svg'
-							alt='Instagram'
-							title='Instagram'
-						/>
+						<img src='./Instagram.svg' alt='Instagram' title='Instagram' />
 					</a>
 				</li>
 				<li>
@@ -44,7 +36,7 @@ export const Contact = () => {
 						href='mailto:nicoatapie@gmail.com'
 						target='blank'
 					>
-						<img src='src/assets/imgs/Email.svg' alt='Email' title='Email' />
+						<img src='./Email.svg' alt='Email' title='Email' />
 					</a>
 				</li>
 			</ul>
