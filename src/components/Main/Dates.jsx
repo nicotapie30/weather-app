@@ -4,7 +4,7 @@ import { capitalizeFirstLetter } from '../../utils/capitalizeFirstLetter';
 import { useState } from 'react';
 import { Form } from './Form';
 
-export const Dates = () => {
+export const Dates = ({ setLocation }) => {
 	const [weatherData, setWeatherData] = useState({});
 	const [cityData, setCityData] = useState('');
 
@@ -14,6 +14,7 @@ export const Dates = () => {
 			const { lat, lon } = cities[0];
 			const weather = await getWeatherCity(lat, lon);
 			setWeatherData(weather);
+			setLocation({ lat, lon });
 		}
 	};
 
@@ -22,7 +23,6 @@ export const Dates = () => {
 		if (nameCity && nameCity.length > 0) {
 			const name = nameCity[0].name;
 			setCityData(name);
-			console.log(setCityData(search));
 		}
 	};
 
@@ -31,7 +31,7 @@ export const Dates = () => {
 		: '';
 
 	return (
-		<section className='w-full h-auto p-4 pt-2 shadow-xl bg-white/20 rounded-md flex flex-col gap-3'>
+		<section className='w-full h-auto p-4 pt-2 shadow-xl min-[1024px]:text-xl bg-black/20 rounded-md flex flex-col gap-3'>
 			<Form onSearch={handleWeatherSearch} onCitySearch={handleCitySearch} />
 			<article className='mb-3 h-8 flex gap-4 place-items-end'>
 				<h2 className='text-3xl font-medium pl-1'>{cityData}</h2>
@@ -43,12 +43,12 @@ export const Dates = () => {
 							<img src={iconUrl} alt='Icono del clima' />
 							<p className='text-3xl font-bold'>{weatherData?.weather}º</p>
 						</div>
-						<div className='font-medium'>
+						<div className='font-medium max-[500px]:text-sm'>
 							<p>{capitalizeFirstLetter(weatherData.description)}</p>
 							<p>Sensacion térmica de {weatherData?.feelslike}º</p>
 						</div>
 					</article>
-					<span className='text-slate-200'>
+					<span className='text-slate-200 max-[500px]:text-sm'>
 						{capitalizeFirstLetter(weatherData?.description)} con temperatura
 						mínima de {weatherData?.min} y máxima de {weatherData?.max}º
 					</span>
@@ -56,24 +56,28 @@ export const Dates = () => {
 			)}
 			{cityData && (
 				<div>
-					<article className='p-4 text-sm flex flex-row justify-between'>
+					<article className='p-4 text-sm flex flex-row justify-between min-[1024px]:text-xl'>
 						<div>
 							<p>Viento</p>
-							<p className='text-lg font-medium'>{weatherData?.wind} km</p>
+							<p className='text-lg font-medium max-[500px]:text-sm'>
+								{weatherData?.wind} km
+							</p>
 						</div>
 						<div>
 							<p>Humedad</p>
-							<p className='text-lg font-medium'>{weatherData?.humidity} %</p>
+							<p className='text-lg font-medium max-[500px]:text-sm'>
+								{weatherData?.humidity} %
+							</p>
 						</div>
 						<div>
 							<p>Visibilidad</p>
-							<p className='text-lg font-medium'>
+							<p className='text-lg font-medium max-[500px]:text-sm'>
 								{weatherData?.visibility} km
 							</p>
 						</div>
 						<div>
 							<p>Presión</p>
-							<p className='text-lg font-medium'>
+							<p className='text-lg font-medium max-[500px]:text-sm'>
 								{weatherData?.pressure} mbar
 							</p>
 						</div>

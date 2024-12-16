@@ -1,6 +1,6 @@
 export const Contact = () => {
 	return (
-		<>
+		<div className='lg:pr-40 xl:pr-60'>
 			<h3 className='mb-3 text-xl font-bold'>Contacto</h3>
 			<ul className='flex gap-1'>
 				<li>
@@ -48,6 +48,6 @@ export const Contact = () => {
 					</a>
 				</li>
 			</ul>
-		</>
+		</div>
 	);
 };
