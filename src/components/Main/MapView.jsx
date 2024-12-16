@@ -1,5 +1,6 @@
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
 import { useEffect } from 'react';
 
 const MapView = ({ location }) => {
@@ -11,6 +12,13 @@ const MapView = ({ location }) => {
 		}
 	}, [location, map]);
 
+	const icon = L.icon({
+		iconUrl: 'https://openweathermap.org/img/wn/04d.png',
+		iconSize: [50, 50],
+		iconAnchor: [25, 50],
+		popupAnchor: [0, -50],
+	});
+
 	return (
 		<>
 			<TileLayer
@@ -19,7 +27,7 @@ const MapView = ({ location }) => {
 			/>
 
 			{location && (
-				<Marker position={{ lat: location.lat, lng: location.lon }}>
+				<Marker position={{ lat: location.lat, lng: location.lon }} icon={icon}>
 					<Popup>Tu clima</Popup>
 				</Marker>
 			)}
