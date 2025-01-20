@@ -24,7 +24,7 @@ export const Form = ({ onSearch, onCitySearch }) => {
 					value={capitalizeFirstLetter(search)}
 					onChange={(ev) => setSearch(ev.target.value)}
 				/>
-				<button className='px-2 w-auto h-full bg-teal-950 text-zinc-50 font-semibold rounded-e-md border-none outline-none hover:bg-slate-400 hover:text-gray-900 transition-all'>
+				<button className='px-2 w-auto h-full bg-violet-500 text-zinc-50 font-semibold rounded-e-md border-none outline-none hover:bg-violet-300 hover:text-gray-900 transition-all'>
 					Buscar
 				</button>
 			</form>

@@ -22,6 +22,6 @@ export const getWeatherCity = async (lat, lon) => {
 			};
 		}
 	} catch (error) {
-		console.error('Fallo en petición');
+		alert(`Error en la petición: ${error}`);
 	}
 };

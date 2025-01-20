@@ -4,7 +4,7 @@ import { WeatherMain } from './components/Main/WeatherMain';
 
 export default function App() {
 	return (
-		<div className='w-full h-full lg:flex lg:flex-col lg:place-items-center bg-gradient-to-b from-cyan-900 to-gray-200'>
+		<div className='inset-0 -z-10 h-full w-full xl:flex xl:flex-col bg-white [background:radial-gradient(125%_95%_at_50%_10%,#73e_40%,#fff_100%)]'>
 			<Header />
 
 			<WeatherMain />

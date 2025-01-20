@@ -15,6 +15,6 @@ export const getCities = async (search) => {
 			}));
 		}
 	} catch (error) {
-		alert(`Ocurrió un error en la petición ${error}`);
+		alert(`Error en la peticion: ${error}`)
 	}
 };
