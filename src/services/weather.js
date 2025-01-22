@@ -22,6 +22,8 @@ export const getWeatherCity = async (lat, lon) => {
 			};
 		}
 	} catch (error) {
-		alert(`Error en la petición: ${error}`);
+		return `<div class='text-red-600 text-center mt-3 mb-8 font-semibold text-lg animate-pulse bg-red-200 rounded-md p-3 w-4/5 mx-auto backdrop-blur-lg bg-opacity-70 border border-red-400 border-opacity-50 shadow-lg transition-all'>
+					<p>Ups... Algo salio mal! Intentelo mas tarde</p>
+				</div>`;
 	}
 };
