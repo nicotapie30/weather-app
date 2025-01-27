@@ -7,7 +7,7 @@ export const WeatherMain = () => {
 
 	return (
 		<>
-			<main className='w-full h-auto lg:px-40 xl:px-80 flex flex-col place-items-center overflow-auto max-[500px]:mb-10'>
+			<main className='w-full h-auto lg:px-40 xl:px-80 pb-5 flex flex-col place-items-center overflow-auto max-[500px]:mb-10'>
 				<h1 className='mb-6 text-5xl font-bold text-slate-50 max-[500px]:text-4xl max-[500px]:mb-4'>
 					Consulte el clima
 				</h1>
