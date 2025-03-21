@@ -19,7 +19,7 @@ export const Header = () => {
 				src='./Logo.webp'
 				alt='Wheater Now'
 			/>
-			<p className='text-3xl text-zinc-100 font-medium'>
+			<p className='text-3xl  text-slate-800/90  font-bold'>
 				{time.hoursMinutes.hour}:{time.hoursMinutes.minutes}
 			</p>
 		</header>

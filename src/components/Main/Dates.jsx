@@ -31,7 +31,7 @@ export const Dates = ({ setLocation }) => {
 		: '';
 
 	return (
-		<section className='w-full h-auto p-4 pt-2 shadow-xl min-[1024px]:text-xl max-[500px]:p-2 bg-black/20 rounded-md flex flex-col gap-3'>
+		<section className='w-full h-auto p-4 pt-2 text-slate-800 font-semibold shadow-xl min-[1024px]:text-xl max-[500px]:p-2 bg-slate-700/20 rounded-md flex flex-col gap-3'>
 			<Form onSearch={handleWeatherSearch} onCitySearch={handleCitySearch} />
 			<article className='mb-3 h-8 flex gap-4 place-items-end'>
 				<h2 className='text-3xl font-medium pl-1 max-[500px]:text-2xl'>
@@ -52,7 +52,7 @@ export const Dates = ({ setLocation }) => {
 							<p>Sensacion térmica de {weatherData?.feelslike}º</p>
 						</div>
 					</article>
-					<span className='text-slate-200 max-[500px]:text-sm'>
+					<span className='text-slate-800 max-[500px]:text-sm'>
 						{capitalizeFirstLetter(weatherData?.description)} con temperatura
 						mínima de {weatherData?.min} y máxima de {weatherData?.max}º
 					</span>
@@ -60,7 +60,7 @@ export const Dates = ({ setLocation }) => {
 			)}
 			{cityData && (
 				<div>
-					<article className='p-4 text-sm flex flex-row justify-between min-[1024px]:text-xl max-[500px]:p-1'>
+					<article className='p-4 text-sm flex text-slate-800 flex-row justify-between min-[1024px]:text-xl max-[500px]:p-1'>
 						<div>
 							<p>Viento</p>
 							<p className='text-lg font-medium max-[500px]:text-xs'>
