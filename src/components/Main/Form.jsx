@@ -33,7 +33,7 @@ export const Form = ({ onSearch, onCitySearch }) => {
 						onChange={(ev) => setSearch(ev.target.value)}
 					/>
 
-					<button className='w-auto h-auto px-4 py-2  bg-blue-800/50 text-zinc-50 font-semibold rounded-e-md border-none outline-none hover:bg-zinc-50 hover:text-blue-800/80 transition-all'>
+					<button className='w-auto h-auto px-4 py-2  bg-[#1f2a38] text-zinc-50 font-semibold rounded-e-md border-none outline-none hover:bg-zinc-50 hover:text-slate-800/80 transition-all'>
 						Buscar
 					</button>
 				</div>

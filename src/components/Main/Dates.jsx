@@ -31,7 +31,7 @@ export const Dates = ({ setLocation }) => {
 		: '';
 
 	return (
-		<section className='w-full h-auto p-4 pt-2 text-slate-800 font-semibold shadow-xl min-[1024px]:text-xl max-[500px]:p-2 bg-slate-700/10 rounded-md flex flex-col gap-3'>
+		<section className='w-full h-auto p-4 pt-2 text-slate-800 font-semibold shadow-xl min-[1024px]:text-xl max-[500px]:p-2 bg-slate-400/10 rounded-md flex flex-col gap-3'>
 			<Form onSearch={handleWeatherSearch} onCitySearch={handleCitySearch} />
 			<article className='mb-3 h-8 flex gap-4 place-items-end'>
 				<h2 className='text-3xl font-medium pl-1 max-[500px]:text-2xl'>
